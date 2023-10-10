@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/main_fragment">
+
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="edu.iu.alex.notesapp.MainFragment"
+        android:label="main_fragment"
+        app:layout="@layout/main_fragment">
+
+
+        <action
+            android:id="@+id/mainFragment_to_noteFragment"
+            app:destination="@+id/note_fragment" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/note_fragment"
+        android:name="edu.iu.alex.notesapp.NoteFragment"
+        android:label="note_fragment"
+        app:layout="@layout/note_fragment">
+
+        <argument
+            android:name="noteId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+
+        <action
+            android:id="@+id/noteFragment_to_mainFragment"
+            app:destination="@+id/main_fragment"/>
+
+    </fragment>
+
+
+</navigation>
