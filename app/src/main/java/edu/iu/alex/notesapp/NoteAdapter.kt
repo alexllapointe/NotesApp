@@ -14,9 +14,16 @@ class NoteAdapter(val notes: MutableList<Note>) : RecyclerView.Adapter<NoteAdapt
         val deleteButton: ImageButton = itemView.findViewById(R.id.delete_note_button)
     }
 
+    /**
+     * Interface for keeping track of when the image button of the note is pressed.
+     */
     interface OnNoteDeletedListener {
         fun onNoteDeleted(note: Note)
     }
+
+    /**
+     * Interface for keeping track of when the textview of the note is clicked.
+     */
 
     interface OnNoteClickListener {
         fun onNoteClick(note: Note)
@@ -30,6 +37,7 @@ class NoteAdapter(val notes: MutableList<Note>) : RecyclerView.Adapter<NoteAdapt
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_note, parent, false)
         return NoteViewHolder(view)
     }
+
 
     override fun getItemCount(): Int = notes.size
 

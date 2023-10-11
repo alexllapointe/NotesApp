@@ -69,6 +69,12 @@ class NoteFragment : Fragment() {
         }
     }
 
+    /**
+     * Method saves note item to the database.
+     *
+     * @param note Takes in a Note item(title,desc,id).
+     */
+
     private fun saveNoteToDb(note: Note) {
         val executor = Executors.newSingleThreadExecutor()
         executor.execute {

@@ -48,6 +48,15 @@ class MainFragment : Fragment() {
             }
         }
 
+
+        /**
+         * Method that calls the delete method(query) from the NoteDao.
+         *
+         * This is called when the imageButton is pressed.
+         *
+         * @param note note item
+         */
+
         noteAdapter.onDeleteListener = object : NoteAdapter.OnNoteDeletedListener {
             override fun onNoteDeleted(note: Note) {
                 viewLifecycleOwner.lifecycleScope.launch {
@@ -57,6 +66,13 @@ class MainFragment : Fragment() {
             }
         }
 
+        /**
+         * Method that calls the delete method(query) from the NoteDao.
+         *
+         * This is called when the textview of the note is clicked.
+         *
+         * @param note note item
+         */
         noteAdapter.onNoteClickListener = object : NoteAdapter.OnNoteClickListener {
             override fun onNoteClick(note: Note) {
                 val bundle = Bundle()
